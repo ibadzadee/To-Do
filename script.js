@@ -13,9 +13,16 @@ const create = ()=>{
         ul.append(li)
     }
     input.value = ""
-    let deleteBtn = document.createElement("button")
-    deleteBtn.innerText=  "Delete"
-    li.append(deleteBtn)
+    let liBtns = document.createElement("div")
+    let deleteBtn = document.createElement("i")
+    deleteBtn.className = "bi bi-trash"
+    let editBtn = document.createElement("i")
+    // liBtns.innerHTML += "i"
+    editBtn.className = "bi bi-pencil-square"
+    // deleteBtn.innerHtml +=  '<i class="bi bi-trash"></i>'
+    li.append(liBtns)
+    liBtns.append(editBtn)
+    liBtns.append(deleteBtn)
     deleteBtn.addEventListener("click" , ()=>{
         li.remove()
     })
