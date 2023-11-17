@@ -6,7 +6,7 @@ const ul  = document.querySelector("ul")
 const create = ()=>{
     let li = document.createElement("li")
     li.innerText = input.value
-    if(input.value == ""){
+    if(input.value.trim() == ""){
         alert("you have no elemet yet")
     }
     else{
@@ -16,6 +16,9 @@ const create = ()=>{
     let deleteBtn = document.createElement("button")
     deleteBtn.innerText=  "Delete"
     li.append(deleteBtn)
+    deleteBtn.addEventListener("click" , ()=>{
+        li.remove()
+    })
 }
 
 addBtn.addEventListener("click" ,create)
@@ -25,17 +28,6 @@ input.addEventListener("keypress" , (e)=>{
         create(e)
     }
 })
-
-
-
-
-
-
-
-
-
-
-
 
 
 
